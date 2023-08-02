@@ -7,6 +7,7 @@ import NotFound from "./pages/notfound";
 import ReactDOM from "react-dom/client";
 import Header from "./pages/header";
 import ScrollToTop from "./pages/ScrollToTop";
+
 export default function App() 
 {
     return(

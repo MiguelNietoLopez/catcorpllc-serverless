@@ -2,16 +2,19 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Footer from "./footer";
 import "./solutions.css";
+const greggregorygregson = require("./common/images/greggregorygregson.jpg");
+const peanut = require("./common/images/peanut.png");
+
 export default class SolutionsApp extends React.Component{
     constructor(props){
         super(props);
         this.state = {
             devArray: [
                 {                
-                    name: "Greg G. Gregson", title: "Senior Web Developer", desc: "Greg G. Gregson has 12 years developing Web based projects. He personally helped develop React, Vue, and many other javascript frameworks used today.", imgSrc:"/common/images/greggregorygregson.jpg" 
+                    name: "Greg G. Gregson", title: "Senior Web Developer", desc: "Greg G. Gregson has 12 years developing Web based projects. He personally helped develop React, Vue, and many other javascript frameworks used today.", imgSrc: greggregorygregson 
                 },
                 {
-                    name: "Peanut", title: "Senior Web Developer", desc: "has designed and maintained multiple websites dedicated to centralizing intelligence on different areas around revolutionary thinkers and their day to day routines and life. His hobbies include puzzles and gardening", imgSrc: "/common/images/peanut.png"
+                    name: "Peanut", title: "Senior Web Developer", desc: "has designed and maintained multiple websites dedicated to centralizing intelligence on different areas around revolutionary thinkers and their day to day routines and life. His hobbies include puzzles and gardening", imgSrc: peanut
                 }
             ],
             devArrayPos : 0
@@ -64,7 +67,7 @@ export default class SolutionsApp extends React.Component{
                     </ul>
                     <h2 id="devshowcaseheader" className="header">Developer Showcase</h2>
                     <div id="imgDiv">
-                        <img className="img" alt="Image of Show Cased Developer"src={this.state.devArray[this.state.devArrayPos].imgSrc}></img>
+                        <img className="img" alt="Image of Show Cased Developer" src={this.state.devArray[this.state.devArrayPos].imgSrc}></img>
                         <button className="button" id="leftButton" onClick={() => this.updateDevPos(0)}>{'<'}</button>
                         <button className="button" id="rightButton" onClick={() => this.updateDevPos(1)}>{'>'}</button>
                     </div>

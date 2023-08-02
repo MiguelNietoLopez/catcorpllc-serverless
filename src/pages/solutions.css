@@ -35,9 +35,19 @@
     position: relative;
     width: 100%;
 }
+#devname {
+    margin-top: 5vmax;
+}
 #devshowcaseheader{
-    margin-top: 20vmax;
+    margin-top: 10vmax;
 }
 #devdescription{
     margin-bottom: 10vmax;
+}
+#webdevelopmenttitle{
+    margin-top: 10vmax;
+    font-size: 4vmax;
+}
+#softwaredevelopmenttitle {
+    font-size: 4vmax;
 }
