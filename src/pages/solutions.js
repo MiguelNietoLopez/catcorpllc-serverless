@@ -1,8 +1,8 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import Header from "../common/header";
-import Footer from "../common/footer";
-class SolutionsApp extends React.Component{
+import ReactDOM from "react-dom/client";
+import Footer from "./footer";
+import "./solutions.css";
+export default class SolutionsApp extends React.Component{
     constructor(props){
         super(props);
         this.state = {
@@ -47,7 +47,6 @@ class SolutionsApp extends React.Component{
     render(){
         return(
             <main id="solutionsApp">
-                {Header()}
                 <div id="centerContent">                   
                     <h1 id="title">Solutions</h1>
                     <h2 id="subtitle">Explore what solutions we offer</h2>
@@ -80,5 +79,3 @@ class SolutionsApp extends React.Component{
     }
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<SolutionsApp />)

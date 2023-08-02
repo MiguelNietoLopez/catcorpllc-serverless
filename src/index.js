@@ -1,33 +1,30 @@
-import React from "react";
+import { BrowserRouter, Routes, Route, Link, Outlet } from "react-router-dom";
+import AboutApp from "./pages/about";
+import ContactApp from "./pages/contact";
+import HomeApp from "./pages/home";
+import SolutionsApp from "./pages/solutions";
+import NotFound from "./pages/notfound";
 import ReactDOM from "react-dom/client";
-import Header from "./common/header";
-import Footer from "./common/footer";
-class IndexApp extends React.Component {
-    constructor(props)
-    {
-        super(props);{
-
-        }
-    }
-    render(){
-        return(
-            <main id="indexApp">
-                {Header()}
-                <div id="centerContent">
-                    <h1 id="title">Cat Corp LLC</h1>
-                    <h2 id="subtitle">Number One Cat based Software Firm</h2>
-                    <img id="img1" className="img" alt="Cat working on Computer"  src="./common/images/business-cat-in-office.jpg"></img>
-                    <p className="centerText imgDesc" id="main">We provide many different services and can help you.</p>
-                    <p className="centerText imgTitle" id="stats">Our customers see an average of:</p>
-                    <img id="img2" className="img" alt="Graph. The Information of the Graph is described as"  src="/common/images/13122-01-data-driven-infographic-16x9-1.jpg"></img>
-                    <p className="centerText imgDesc" id="stats2">5000x more purchases, 90000x more return customers, and an average life expectancy of 35000 years</p>
-                    <p className="centerText imgTitle" id="thumbsuptext">Contact Us Today for a Free quote</p>
-                    <img id="img4" className="img" src="/common/images/srdffd.PNG" alt="Happy Customers Giving A Thumbs Up"></img>
-                </div>
-                {Footer()}
-            </main>
-        )
-    }
+import Header from "./pages/header";
+import ScrollToTop from "./pages/ScrollToTop";
+export default function App() 
+{
+    return(
+        <BrowserRouter>
+        <ScrollToTop/>
+        <Header/>
+        <Outlet/>
+            <Routes>
+                <Route path="/">
+                    <Route index element={<HomeApp/>}/>
+                    <Route path="about" element={<AboutApp />}/>
+                    <Route path="contact" element={<ContactApp/>}/>
+                    <Route path="solutions" element={<SolutionsApp/>}/>
+                    <Route path="*" element={<NotFound/>}/>
+                </Route>
+            </Routes>
+        </BrowserRouter>
+    );
 }
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<IndexApp />);
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>)

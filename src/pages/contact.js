@@ -1,8 +1,9 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import Header from "../common/header";
-import Footer from "../common/footer";
-class ContactApp extends React.Component{
+import ReactDOM from "react-dom/client";
+import Footer from "./footer";
+import "./contact.css"
+
+export default class ContactApp extends React.Component{
     constructor(props){
         super(props);
         this.state = {
@@ -153,7 +154,6 @@ class ContactApp extends React.Component{
     render(){
         return(
             <main id="contactApp">
-                {Header()}
                 <div id="centerContent">
                     <h1 id="title">Contact Us</h1>
                     <h3 id="subtitle">Fill out this form and we will get in touch with you</h3>
@@ -184,5 +184,4 @@ class ContactApp extends React.Component{
     }
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<ContactApp />)
+

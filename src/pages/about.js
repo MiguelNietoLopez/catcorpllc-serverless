@@ -1,8 +1,9 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import Header from "../common/header";
-import Footer from "../common/footer";
-class AboutApp extends React.Component{
+import ReactDOM from "react-dom/client";
+import Footer from "./footer";
+import "./base.css";
+import "./about.css";
+export default class AboutApp extends React.Component{
     constructor(props){
         super(props);
     };
@@ -16,7 +17,6 @@ class AboutApp extends React.Component{
     render(){
         return(
             <main id="aboutApp">
-                {Header()}
                 <div id="centerContent">
                 <h1 id="title">About CatCorp LLC</h1>
                 <h2></h2>
@@ -47,5 +47,3 @@ class AboutApp extends React.Component{
     }
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<AboutApp />)
